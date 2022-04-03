@@ -1,6 +1,8 @@
 import java.io.File
 
 fun main(args: Array<String>) {
+    val menu = Menu()
+    menu.mainMenu()
 
 
     val input = File("TelepfoneBook") // это у меня получился неизменяемый List<String>
