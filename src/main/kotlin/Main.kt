@@ -3,10 +3,6 @@ import java.io.File
 fun main(args: Array<String>) {
 
 
-
-
-
-
     val input = File("TelepfoneBook") // это у меня получился неизменяемый List<String>
         .readLines()
 
@@ -14,11 +10,10 @@ fun main(args: Array<String>) {
     val listName = input.filter { it.length < 10 }// и есть список имен
 
 
-
     val contactOlga = Contacts("89517569876", "Анна")
     val contactBoris = Contacts("896754239", "Ева")
 
-    val contactsTel = hashMapOf<String,String>() // я пока представлю номер телефона типом String
+    val contactsTel = hashMapOf<String, String>() // я пока представлю номер телефона типом String
     contactsTel.put(contactOlga.phoneNumber, contactOlga.name)
     contactsTel.put(contactBoris.phoneNumber, contactBoris.name)
 
@@ -31,6 +26,13 @@ fun main(args: Array<String>) {
 
     for (key in contactsTel.keys) {
         println("$key = ${contactsTel[key]}")
+    }
+
+
+
+    fun getNumberByA() { // можно использовать как вариант сортировки от А до Я
+        var result = contactsTel.toList().sortedBy { (key, value) -> value }.toMap()
+        println(result)
     }
 }
 
