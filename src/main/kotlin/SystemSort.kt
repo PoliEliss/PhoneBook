@@ -1,20 +1,68 @@
-fun sortAz(v: HashMap<String, String>): HashMap<String, String> {
-    return v
+import java.util.*
+import kotlin.Comparator
+import kotlin.collections.HashMap
+
+fun <T> comparatorZa(): Comparator<String> {
+    val comapratorZa: Comparator<String> = Comparator { o1: String, o2: String -> (o1.compareTo(o2)) }
+    return comapratorZa
+}
+
+
+fun sortAz(contactsTel: HashMap<String, String>): Map<String, String> {
+    val result = contactsTel.toList().sortedBy { (key, value) -> value }.toMap()
+    println(result)
+    return result
 }
 
 
 fun sortZa(v: HashMap<String, String>): HashMap<String, String> {
+    //не Реализован
     return v
 
 }
 
 fun sortAddTime(v: HashMap<String, String>): HashMap<String, String> {
-
+    // по дате добавляения не релизован
     return v
 }
 
-fun sortlOnLetter(v: HashMap<String, String>): HashMap<String, String> {
+fun sortlOnLetter(v: HashMap<String, String>, name: String): HashMap<String, String> { // поиск по буквам
+    val count: Int = name.length
+
+    val namecCharValue: CharArray = name.toCharArray()
+    var j: Boolean = false;
+    for (s: String in v.values) {
+        var countfor = count;
+        val namecChar: CharArray = s.toCharArray()
+        var nomer = 0;
+        var sovpadeniy = 0
+        while (nomer < countfor) {
+            if (namecChar[nomer].equals(namecCharValue[nomer])) {
+                nomer++
+                sovpadeniy++
+            } else {
+                nomer++
+            }
+        }
+
+        if (sovpadeniy == count) {
+            println(s)
+            j = true;
+        }
+    }
+    if (!j) {
+        println("Не найденно")
+
+    }
     return v
+}
+
+
+fun printMap(v: HashMap<String, String>) {
+    for (key in v.keys) {
+        println("$key = ${v[key]}")
+    }
+
 
 }
 
