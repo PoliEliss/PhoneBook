@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
         .readLines()
 
     val listPhone = input.filter { it.startsWith("8") }// у нас есть список номеров
-    val listName = input.filter { !it.startsWith("8")  }// и есть список имен
+    val listName = input.filter { !it.startsWith("8") }// и есть список имен
 
     val contactsTel = hashMapOf<String, String>()           // я пока представлю номер телефона типом String
     var count = 0
@@ -19,14 +19,7 @@ fun main(args: Array<String>) {
 
 //    contactsTel.put("89675456786456", "Владимир")
 //    contactsTel.put("897646787557856", "Аня")
-
-
-
-
-
-
-
-
+println()
 
 }
 

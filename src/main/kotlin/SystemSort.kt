@@ -14,6 +14,31 @@ fun sortAz(contactsTel: HashMap<String, String>): Map<String, String> {
     return result
 }
 
+fun searchName(contactsTel: HashMap<String, String>, name: String): HashMap<String, String> {
+
+    val nameHasMap = hashMapOf<String, String>()
+    for ((key, value) in contactsTel) {
+        if (value == name) {
+            nameHasMap.put(key, value)
+        }
+    }
+    println(nameHasMap)
+    return nameHasMap
+
+}
+
+fun searchTelNumber(contactsTel: HashMap<String, String>, number: String): HashMap<String, String> {
+    for ((key, value) in contactsTel) {
+        if (key == number) {
+            contactsTel.remove(key)
+        }
+    }
+    println("Номер удален")
+    println(contactsTel)
+    return contactsTel
+
+}
+
 
 fun sortZa(contactsTel: HashMap<String, String>): Map<String, String> {
     val result = contactsTel.toList().sortedBy { (key, value) -> value }.reversed().toMap()

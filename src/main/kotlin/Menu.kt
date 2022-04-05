@@ -1,12 +1,12 @@
 import java.util.*
 
 class Menu(val contact: HashMap<String, String>) {
-var color:String = "\u001B[31m";
+    var color: String = "\u001B[31m";
 
     val sc = Scanner(System.`in`)
 
     fun mainMenu() {
-        println( this.color+"-------Контакты----------")
+        println(this.color + "-------Контакты----------")
         println("Выберите необходимый раздел введя число")
         println("1. Добавить номер")
         println("2. Удалить номер")
@@ -70,7 +70,6 @@ var color:String = "\u001B[31m";
     }
 
 
-
     fun otvet(): String {
         val otvetLine = sc.nextLine();
         return otvetLine
@@ -82,7 +81,26 @@ var color:String = "\u001B[31m";
     }
 
     fun removeNomer() {
-
+        sortAz(contact)
+        println("Введите имя для удаления номера")
+        val sc = Scanner(System.`in`)
+        val name = sc.nextLine()
+        println(name)
+       val mapnumber =  searchName(contact, name)
+        if (mapnumber.size==1){
+            mapnumber.clear()
+            println("номер удален")
+            println(mapnumber)
+        }
+        else if (mapnumber.size==0){
+            println("Такого имени нет в списке")
+        }
+       else{
+            println("Введите номер для удаления ")
+            val sc = Scanner(System.`in`)
+            val nomer = sc.nextLine()
+            searchTelNumber(mapnumber,nomer)
+        }
     }
 
     fun setting() {
@@ -91,11 +109,11 @@ var color:String = "\u001B[31m";
         println(" 2 - Синий")
         println(" 3 - Красный")
         var color = otvet()
-       when(color){
-           "1" -> this.color = "\u001B[32m"
-           "2" -> this.color = "\u001B[34m"
-           "3" -> this.color = "\u001B[31m"
-       }
+        when (color) {
+            "1" -> this.color = "\u001B[32m"
+            "2" -> this.color = "\u001B[34m"
+            "3" -> this.color = "\u001B[31m"
+        }
 
 
         exitMenu()
