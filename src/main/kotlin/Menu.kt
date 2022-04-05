@@ -40,7 +40,7 @@ var color:String = "\u001B[31m";
                 sortAz(contact)
                 exitMenu()
             }
-            "2" -> { /////////////// дописать
+            "2" -> {
                 sortZa(contact)
                 exitMenu()
             }

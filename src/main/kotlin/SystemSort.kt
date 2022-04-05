@@ -15,9 +15,10 @@ fun sortAz(contactsTel: HashMap<String, String>): Map<String, String> {
 }
 
 
-fun sortZa(v: HashMap<String, String>): HashMap<String, String> {
-    //не Реализован
-    return v
+fun sortZa(contactsTel: HashMap<String, String>): Map<String, String> {
+    val result = contactsTel.toList().sortedBy { (key, value) -> value }.reversed().toMap()
+    println(result)
+    return result
 
 }
 
