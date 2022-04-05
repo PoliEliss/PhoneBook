@@ -32,8 +32,7 @@ var color:String = "\u001B[31m";
         println("1 показать все контакты от А д я")
         println("2 показать все конактты от я до А")
         println("3 показать все контакты в имени которых присутствуют буквы")
-        println("4 показать все контакты по дате добавления")
-        println("5 показать все контакты ")
+        println("4 показать все контакты ")
         val otvet = otvet();
         when (otvet) {
             "1" -> {
@@ -50,11 +49,7 @@ var color:String = "\u001B[31m";
                 sortlOnLetter(contact, absd)
                 exitMenu()
             }
-            "4" -> {/////////////// дописать
-
-                exitMenu()
-            }
-            "5" -> {
+            "4" -> {
                 printMap(contact)
                 exitMenu()
 

@@ -22,11 +22,6 @@ fun sortZa(contactsTel: HashMap<String, String>): Map<String, String> {
 
 }
 
-fun sortAddTime(v: HashMap<String, String>): HashMap<String, String> {
-    // по дате добавляения не релизован
-    return v
-}
-
 fun sortlOnLetter(v: HashMap<String, String>, name: String): HashMap<String, String> { // поиск по буквам
     val count: Int = name.length
 
